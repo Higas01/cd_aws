@@ -3,16 +3,17 @@ set -e
 echo " Atualizando código..."
 git pull origin main
 
-echo " Instalando dependências..."
-pnpm install --frozen-lockfile
-
 echo " Buildando frontend..."
 cd apps/frontend
+echo " Instalando dependências..."
+pnpm install --frozen-lockfile
 pnpm build
 cd ../..
 
 echo " Buildando backend..."
 cd apps/backend
+echo " Instalando dependências..."
+pnpm install --frozen-lockfile
 pnpm build
 cd ../..
 
