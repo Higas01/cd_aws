@@ -11,7 +11,7 @@ export default async function Home() {
             Usuários
           </h1>
           <p className="mt-1 text-zinc-500 dark:text-zinc-400">
-            Listagem de pessoas cadastradas
+            Listagem de pessoas cadastradass
           </p>
         </header>
 
