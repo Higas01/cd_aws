@@ -3,10 +3,13 @@ set -e
 echo " Atualizando código..."
 git pull origin main
 
+echo " Garantindo pnpm..."
+command -v pnpm >/dev/null 2>&1 || npm install -g pnpm
+
 echo " Buildando backend..."
 cd apps/backend
 echo " Instalando dependências..."
-npm ci
+pnpm install --frozen-lockfile
 npm run build
 cd ../..
 
@@ -19,7 +22,7 @@ pm2 describe backend > /dev/null \
 echo " Buildando frontend..."
 cd apps/frontend
 echo " Instalando dependências..."
-npm ci
+pnpm install --frozen-lockfile
 npm run build
 cd ../..
 
